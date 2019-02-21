@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import { CommunityProfile } from 'src/components/profile';
-import { collections } from './collections';
+import { collections } from './';
 import viewNetworkHandler from 'src/components/viewNetworkHandler';
 import { withCurrentUser } from 'src/components/withCurrentUser';
 import {

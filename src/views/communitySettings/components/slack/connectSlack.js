@@ -1,4 +1,5 @@
 // @flow
+require('now-env');
 import * as React from 'react';
 import type { GetSlackSettingsType } from 'shared/graphql/queries/community/getCommunitySlackSettings';
 import {
@@ -21,7 +22,7 @@ class ImportSlackTeam extends React.Component<Props> {
 
     const url = isOnboarding
       ? `https://slack.com/oauth/authorize?client_id=${
-          process.env.REACT_APP_SLACK_CLIENT_DEVELOPMENT
+          process.env.SLACK_CLIENT_DEVELOPMENT
         }&scope=users:read.email%20users:read%20chat:write:bot%20groups:read%20channels:read&state=${
           community.id
         }&redirect_uri=${
@@ -32,7 +33,7 @@ class ImportSlackTeam extends React.Component<Props> {
               }/api/slack/onboarding`
         }`
       : `https://slack.com/oauth/authorize?client_id=${
-          process.env.REACT_APP_SLACK_CLIENT_DEVELOPMENT
+          process.env.SLACK_CLIENT_DEVELOPMENT
         }&scope=users:read.email%20users:read%20chat:write:bot%20groups:read%20channels:read&state=${
           community.id
         }&redirect_uri=${
